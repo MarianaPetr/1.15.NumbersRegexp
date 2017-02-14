@@ -22,4 +22,15 @@ public class NumberCounterTest {
         System.setIn(new ByteArrayInputStream("AllillA12".getBytes()));
         assertEquals(classUnderTest.CoutnNumbers(classUnderTest.askForString()), 2, "Count for 2 numbers");;
     }
+           
+    @Test public void countForNulled(){
+    	NumberCounter classUnderTest = new NumberCounter();
+   	    assertEquals(classUnderTest.CoutnNumbers(null), 0, "Count for 0 numbers in null");    	
+   }
+   
+   @Test public void countForEmptyString(){
+	   NumberCounter classUnderTest = new NumberCounter();
+       assertEquals(classUnderTest.CoutnNumbers(""), 0, "Count for 0 numbers in empty string");  	
+  }
+  
 }

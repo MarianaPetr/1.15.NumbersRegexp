@@ -9,14 +9,19 @@ public class NumberCounter {
     
 	public int CoutnNumbers(String input) {
 		int count=0;
-		
-		Pattern p= Pattern.compile("[0-9]");
-		Matcher m = p.matcher(input);
-		while (m.find())
-		{
-			count++;
+		if(input != null){
+			Pattern p= Pattern.compile("[0-9]");
+			Matcher m = p.matcher(input);
+			while (m.find())
+			{
+				count++;
+			}
+			return count;
 		}
-		return count;
+		else{
+			System.out.println("The entered string can't be nulled");
+			return 0;
+		}
 	}
 	
 	public String askForString (){
